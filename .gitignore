@@ -38,5 +38,6 @@ Thumbs.db
 
 # Directories #
 ###############
-.idea/
-target/
+.idea/*
+target
+*.iml
