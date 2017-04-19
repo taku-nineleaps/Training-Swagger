@@ -56,6 +56,9 @@ public class BasicResource {
      * @return <b>createdProduct</b>, Product
      */
     @POST
+    @ApiOperation(
+            value = "Create a Product",
+            notes = "Creates a new product with product id")
     public Product createProduct(@PathParam("product") String productId, @Valid Product product) {
         Product createdProduct = repository.create(product, Product.class);
         logger.info("Validation successful, Product is created");
@@ -68,6 +71,9 @@ public class BasicResource {
      * @param product, Product
      */
     @DELETE
+    @ApiOperation(
+            value = "Delete a product by ID",
+            notes = "Deletes a product with the provided ID if exists")
     public String deleteProduct(@Valid Product product) {
         repository.delete(product);
         return "Product deleted successfully!";
